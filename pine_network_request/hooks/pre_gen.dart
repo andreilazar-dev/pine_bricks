@@ -13,11 +13,13 @@ void run(HookContext context) {
     exit(0);
   }
 
+  final domains = context.vars['domains'] as String;
   final name = context.vars['name'] as String;
   final packageName = pubspec.name;
 
   context.vars = {
     ...context.vars,
+    'domains_name': domains.snakeCase,
     'file_name': name.snakeCase,
     'package_name': packageName,
   };

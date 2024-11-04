@@ -22,6 +22,11 @@ environment:
 #  * an optional prompt phrase used when asking for the variable
 #  * a list of values (enums only)
 vars:
+  domains:
+    type: string
+    description: The Domains name
+    default: domain
+    prompt: What's the name of the the Domains?
   name:
     type: string
     description: The model name

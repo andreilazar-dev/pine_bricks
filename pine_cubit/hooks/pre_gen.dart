@@ -14,6 +14,7 @@ void run(HookContext context) {
     exit(0);
   }
 
+  final domains = context.vars['domains'] as String;
   final name = context.vars['name'] as String;
   final methods = (context.vars['methods'] as String)
       .split(',')
@@ -42,6 +43,7 @@ void run(HookContext context) {
 
   context.vars = {
     ...context.vars,
+    'domains_name': domains.snakeCase,
     'file_name': name.snakeCase,
     'cubit_name': '${capitalize(name)}Cubit',
     'state': '${capitalize(name)}State',

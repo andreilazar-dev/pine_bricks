@@ -1,3 +1,11 @@
+This repository is a fork of the original project, aimed at restructuring the project to make it more modular and organized by domains.
+
+## Purpose of the Fork
+The primary objective of this fork is to enhance modularity within the project. Each brick in this repository has been organized according to domain-specific functionality, allowing for a more manageable and scalable structure. This approach promotes reusability, clearer separation of concerns, and easier maintenance.
+
+## Brick Structure
+Each directory within this repository represents a distinct domain and contains the Mason brick files relevant to that domain. This modular setup allows developers to pull only the necessary bricks for a specific feature or domain, facilitating a more efficient development process.
+
 <p align="center">
 <img src="https://raw.githubusercontent.com/felangel/mason/master/assets/mason_full.png" height="125" alt="mason logo" />
 </p>

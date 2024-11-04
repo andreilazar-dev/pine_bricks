@@ -13,6 +13,7 @@ void run(HookContext context) {
     exit(0);
   }
 
+  final domains = context.vars['presentation'] as String;
   final name = context.vars['name'] as String;
   final packageName = pubspec.name;
   final stateful = context.vars['state'] as bool;
@@ -20,6 +21,7 @@ void run(HookContext context) {
 
   context.vars = {
     ...context.vars,
+    'presentations_name': domains.snakeCase,
     'file_name': name.snakeCase,
     'stateless': stateless,
     'stateful': stateful,

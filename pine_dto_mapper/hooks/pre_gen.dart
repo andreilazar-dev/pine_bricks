@@ -13,6 +13,7 @@ void run(HookContext context) {
     exit(0);
   }
 
+  final domains = context.vars['domains'] as String;
   final name = context.vars['name'] as String;
   final modelName = context.vars['model_name'] as String;
   final dtoName = context.vars['dto_name'] as String;
@@ -30,6 +31,7 @@ void run(HookContext context) {
 
   context.vars = {
     ...context.vars,
+    'domains_name': domains.snakeCase,
     'file_name': name.replaceAll('JTO', 'Jto').snakeCase,
     'model_file_name': modelName.snakeCase,
     'dto_file_name': dtoFileName,

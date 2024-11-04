@@ -4,7 +4,7 @@ description: A brick to generate a generic DTO request
 # The following defines the version and build number for your brick.
 # A version number is three numbers separated by dots, like 1.2.34
 # followed by an optional build number (separated by a +).
-version: 0.1.0+2
+version: 0.1.1+2
 repository: https://github.com/MyLittleSuite/pine_bricks/tree/master/pine_network_request
 
 # The following defines the environment for the current brick.
@@ -22,6 +22,11 @@ environment:
 #  * an optional prompt phrase used when asking for the variable
 #  * a list of values (enums only)
 vars:
+  domains:
+    type: string
+    description: The Domains name
+    default: domain
+    prompt: What's the name of the the Domains?
   name:
     type: string
     description: The DTO request name
