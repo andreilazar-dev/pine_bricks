@@ -1,5 +1,5 @@
 import 'package:data_fixture_dart/data_fixture_dart.dart';
-import 'package:{{package_name}}/services/network/requests/{{file_name}}/{{file_name}}_request.dart';
+import 'package:{{package_name}}/domains/{{domains_name}}/services/network/requests/{{file_name}}/{{file_name}}_request.dart';
 
 extension {{name}}RequestFixture on {{name}}Request {
   static {{name}}RequestFixtureFactory factory() => {{name}}RequestFixtureFactory();

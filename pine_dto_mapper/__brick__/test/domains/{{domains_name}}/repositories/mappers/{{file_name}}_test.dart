@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:{{package_name}}/models/{{model_file_name}}/{{model_file_name}}.dart';
-import 'package:{{package_name}}/repositories/mappers/{{file_name}}.dart';
+import 'package:{{package_name}}/domains/{{domains_name}}/models/{{model_file_name}}/{{model_file_name}}.dart';
+import 'package:{{package_name}}/domains/{{domains_name}}/repositories/mappers/{{file_name}}.dart';
 import '{{{dto_full_path}}}';
 import '{{{dto_fixture_full_path}}}';
 

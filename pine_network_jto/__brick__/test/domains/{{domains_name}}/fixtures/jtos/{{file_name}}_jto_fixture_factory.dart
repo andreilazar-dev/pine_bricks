@@ -1,5 +1,5 @@
 import 'package:data_fixture_dart/data_fixture_dart.dart';
-import 'package:{{package_name}}/services/network/jto/{{file_name}}/{{file_name}}_jto.dart';
+import 'package:{{package_name}}/domains/{{domains_name}}/services/network/jto/{{file_name}}/{{file_name}}_jto.dart';
 
 extension {{name}}JTOFixture on {{name}}JTO {
   static {{name}}JTOFixtureFactory factory() => {{name}}JTOFixtureFactory();

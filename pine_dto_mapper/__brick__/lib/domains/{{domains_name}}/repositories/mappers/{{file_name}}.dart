@@ -1,5 +1,5 @@
 import 'package:pine/pine.dart';
-import 'package:{{package_name}}/models/{{model_file_name}}/{{model_file_name}}.dart';
+import 'package:{{package_name}}/domains/{{domains_name}}/models/{{model_file_name}}/{{model_file_name}}.dart';
 import '{{{dto_full_path}}}';
 
 class {{name}} extends DTOMapper<{{dto_full_name}}, {{model_name}}> {
