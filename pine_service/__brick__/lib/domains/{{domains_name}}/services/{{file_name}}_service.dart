@@ -2,7 +2,7 @@
 import 'package:provider/provider.dart';{{/context}}
 
 /// Abstract class of {{name}}Service
-abstract class {{name}}Service {
+abstract interface class {{name}}Service {
   {{#functions}}void {{method_name}}();
   {{/functions}}
 }

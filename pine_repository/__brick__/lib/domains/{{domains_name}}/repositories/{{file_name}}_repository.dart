@@ -2,7 +2,7 @@
 import 'package:provider/provider.dart';{{/context}}
 
 /// Abstract class of {{name}}Repository
-abstract class {{name}}Repository {
+abstract interface class {{name}}Repository {
   {{#functions}}void {{method_name}}();
   {{/functions}}
 }

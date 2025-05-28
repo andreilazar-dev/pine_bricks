@@ -13,11 +13,11 @@ mason make pine_service --name "Authentication" --methods "perform"
 
 ## Variables ✨
 
-| Variable | Description                               | Default | Type     |
-|----------|-------------------------------------------|---------|----------|
-| `name`   | The name of the service                   | Dash    | `string` |
-| `methods` | The list of the methods (comma separated) | action  | `string` |
-| `context` | Generate service extension on context     | true    | `boolean`   |
+| Variable  | Description                               | Default | Type      |
+|-----------|-------------------------------------------|---------|-----------|
+| `name`    | The name of the service                   | Dash    | `string`  |
+| `methods` | The list of the methods (comma separated) | action  | `string`  |
+| `context` | Generate service extension on context     | true    | `boolean` |
 
 ## Outputs 📦
 
@@ -37,7 +37,7 @@ mason make pine_service --name "Authentication" --methods "perform"
 
 ```dart
 /// Abstract class of AuthenticationService
-abstract class AuthenticationService {
+abstract interface class AuthenticationService {
   void perform();
 }
 
