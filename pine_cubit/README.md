@@ -15,12 +15,12 @@ mason make pine_cubit --name "SignIn" --methods "perform" --states "performing,p
 
 ## Variables ✨
 
-| Variable  | Description                               | Default | Type     |
-|-----------|-------------------------------------------|---------|----------|
-| `name`    | The name of the cubit                     | Dash    | `string` |
-| `methods` | The list of the methods (comma separated) | action  | `string` |
-| `states`  | The list of the states (comma separated)  | initial | `string` |
-| `context` | Generate Cubit extension on context       | true    | `boolean`   |
+| Variable  | Description                               | Default | Type      |
+|-----------|-------------------------------------------|---------|-----------|
+| `name`    | The name of the cubit                     | Dash    | `string`  |
+| `methods` | The list of the methods (comma separated) | action  | `string`  |
+| `states`  | The list of the states (comma separated)  | initial | `string`  |
+| `context` | Generate Cubit extension on context       | true    | `boolean` |
 
 ## Outputs 📦
 
@@ -64,6 +64,9 @@ class SignInCubit extends Cubit<SignInState> {
 extension SignInCubitExtension on BuildContext {
   /// Extension method used to get the [SignInCubit] instance
   SignInCubit get signInCubit => read<SignInCubit>();
+    
+  /// Extension method used to watch the [SignInCubit] instance
+  SignInCubit get watchSignInCubit => watch<SignInCubit>();
 }
 ```
 
@@ -73,7 +76,7 @@ extension SignInCubitExtension on BuildContext {
 part of 'sign_in_cubit.dart';
 
 @freezed
-class SignInState with _$SignInState {
+sealed class SignInState with _$SignInState {
   const factory SignInState.performing() = PerformingSignInState;
 
   const factory SignInState.performed() = PerformedSignInState;

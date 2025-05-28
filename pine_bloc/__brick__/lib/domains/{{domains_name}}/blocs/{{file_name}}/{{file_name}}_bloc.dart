@@ -33,4 +33,7 @@ class {{bloc_name}} extends Bloc<{{event}}, {{state}}> {
 {{#context}}extension {{bloc_name}}Extension on BuildContext {
   /// Extension method used to get the [{{bloc_name}}] instance
   {{bloc_name}} get {{bloc_name.camelCase()}} => read<{{bloc_name}}>();
+
+  /// Extension method used to watch the [{{bloc_name}}] instance
+  {{bloc_name}} get watch{{bloc_name}} => watch<{{bloc_name}}>();
 }{{/context}}

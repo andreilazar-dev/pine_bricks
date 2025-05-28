@@ -37,7 +37,7 @@ mason make pine_repository --name "Authentication" --methods "perform"
 
 ```dart
 /// Abstract class of AuthenticationRepository
-abstract class AuthenticationRepository {
+abstract interface class AuthenticationRepository {
   void perform();
 }
 

@@ -15,12 +15,12 @@ mason make pine_bloc --name "SignIn" --events "perform" --states "performing,per
 
 ## Variables ✨
 
-| Variable  | Description                             | Default | Type     |
-|-----------|-----------------------------------------|---------|----------|
-| `name`    | The name of the bloc                    | Dash    | `string` |
-| `events`  | The list of the events (comma separated) | action  | `string` |
-| `states`  | The list of the states (comma separated) | initial | `string` |
-| `context` | Generate BLoC extension on context      | true    | `boolean`   |
+| Variable  | Description                              | Default | Type      |
+|-----------|------------------------------------------|---------|-----------|
+| `name`    | The name of the bloc                     | Dash    | `string`  |
+| `events`  | The list of the events (comma separated) | action  | `string`  |
+| `states`  | The list of the states (comma separated) | initial | `string`  |
+| `context` | Generate BLoC extension on context       | true    | `boolean` |
 
 ## Outputs 📦
 
@@ -72,6 +72,9 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
 extension SignInBlocExtension on BuildContext {
   /// Extension method used to get the [SignInBloc] instance
   SignInBloc get signInBloc => read<SignInBloc>();
+  
+  /// Extension method used to watch the [SignInBloc] instance
+  SignInBloc get watchSignInBloc => watch<SignInBloc>();
 }
 
 ```
@@ -82,7 +85,7 @@ extension SignInBlocExtension on BuildContext {
 part of 'sign_in_bloc.dart';
 
 @freezed
-class SignInEvent with _$SignInEvent {
+sealed class SignInEvent with _$SignInEvent {
   const factory SignInEvent.perform() = PerformSignInEvent;
 }
 
@@ -94,7 +97,7 @@ class SignInEvent with _$SignInEvent {
 part of 'sign_in_bloc.dart';
 
 @freezed
-class SignInState with _$SignInState {
+sealed class SignInState with _$SignInState {
   const factory SignInState.performing() = PerformingSignInState;
 
   const factory SignInState.performed() = PerformedSignInState;
