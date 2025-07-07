@@ -17,16 +17,20 @@ void run(HookContext context) {
   final name = context.vars['name'] as String;
   final modelName = context.vars['model_name'] as String;
   final dtoName = context.vars['dto_name'] as String;
-  final type = context.vars['type'] as String;
+  final type = (context.vars['type'] as String).toLowerCase();
   final request = 'request' == type;
   final response = 'response' == type;
   final jto = 'jto' == type;
-  final dtoPathType = request ? 'requests' : response ? 'responses' : jto ? 'jto' : '';
+  final dto = type == 'dto';
+  final dtoPathType = request ? 'requests' : response ? 'responses' : jto ? 'jtos' :  dto ? 'dtos' : '';
   final dtoFileName = dtoName.snakeCase;
   final dtoFullName =
-      '$dtoName${request ? 'Request' : response ? 'Response' : jto ? 'JTO' : ''}';
+      '$dtoName${request ? 'Request' : response ? 'Response' : jto ? 'JTO' : dto ? 'DTO' : ''}';
   final packageName = pubspec.name;
-  final dtoFullPath = 'package:$packageName/services/network/$dtoPathType/$dtoFileName/${dtoFileName}_$type.dart';
+  final dtoFullPath = dto
+    ? 'package:$packageName/domains/${domains.snakeCase}/services/database/$dtoPathType/$dtoFileName/${dtoFileName}_$type.dart'
+    : 'package:$packageName/domains/${domains.snakeCase}/services/network/$dtoPathType/$dtoFileName/${dtoFileName}_$type.dart';
+
   final dtoFixtureFullPath = '../../fixtures/$dtoPathType/${dtoFileName}_${type}_fixture_factory.dart';
 
   context.vars = {
@@ -42,5 +46,7 @@ void run(HookContext context) {
     'request': request,
     'response': response,
     'jto': jto,
+    'type': type,
+    'type_upper' : type.toUpperCase()
   };
 }
